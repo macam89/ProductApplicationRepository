@@ -1,0 +1,111 @@
+﻿@model DomainLayer.Models.Product
+
+<head>
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            border: 1px solid #394639;
+            background-color: #6f766f;
+        }
+
+        li {
+            float: left;
+        }
+
+            li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+                li a:hover:not(.active) {
+                    color: black;
+                    background-color: #d5ff05;
+                }
+    </style>
+</head>
+<body>
+
+    <ul>
+        <li><a href="@Url.Action("Index","Home")">Home</a></li>
+        <li><a href="@Url.Action("Products","ProductView")">Products</a></li>
+    </ul>
+
+</body>
+
+@{
+    ViewData["Title"] = "ProductDetails";
+}
+
+<div>
+    <h1>Product details</h1>
+    <hr />
+</div>
+
+<style>
+    table, th, td {
+        border: 1px solid #394639;
+        border-collapse: collapse;
+    }
+
+    th {
+        padding: 8px;
+        text-align: left;
+    }
+
+    td {
+        padding: 5px;
+        text-align: left;
+    }
+
+    table.product {
+        width: 50%;
+        background-color: #f2f3f2;
+    }
+</style>
+
+<body>
+    <table class="product">
+        <tr>
+            <th>@Html.DisplayName("ID:")</th>
+            <td>@Html.DisplayFor(model => model.ProductID)</td>
+        </tr>
+        <tr>
+            <th>@Html.DisplayName("Name:")</th>
+            <td>@Html.DisplayFor(model => model.Name)</td>
+        </tr>
+        <tr>
+            <th>@Html.DisplayName("Description:")</th>
+            <td>@Html.DisplayFor(model => model.Description)</td>
+        </tr>
+        <tr>
+            <th>@Html.DisplayName("Category:")</th>
+            <td>@Html.DisplayFor(model => model.Category)</td>
+        </tr>
+        <tr>
+            <th>@Html.DisplayName("Manufacturer:")</th>
+            <td>@Html.DisplayFor(model => model.Manufacturer)</td>
+        </tr>
+        <tr>
+            <th>@Html.DisplayName("Supplier:")</th>
+            <td>@Html.DisplayFor(model => model.Supplier)</td>
+        </tr>
+        <tr>
+            <th>@Html.DisplayName("Price:")</th>
+            <td>@Html.DisplayFor(model => model.Price)</td>
+        </tr>
+
+    </table>
+</body>
+
+<div>
+    <hr />
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ProductID }) ||
+    @Html.ActionLink("Delete", "Delete", new { id = Model.ProductID }) ||
+    <a href="@Url.Action("Products","ProductView")">Back to list of products</a>
+</div>

@@ -1,0 +1,182 @@
+﻿@model DomainLayer.Models.Product
+
+<head>
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            border: 1px solid #394639;
+            background-color: #6f766f;
+        }
+
+        li {
+            float: left;
+        }
+
+            li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+                li a:hover:not(.active) {
+                    color: black;
+                    background-color: #d5ff05;
+                }
+    </style>
+</head>
+<body>
+
+    <ul>
+        <li><a href="@Url.Action("Index","Home")">Home</a></li>
+        <li><a href="@Url.Action("Products","ProductView")">Products</a></li>
+    </ul>
+
+</body>
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: white;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .form-group {
+            padding: 12px;
+            background-color: white;
+        }
+
+        .col-md-10 {
+            width: 100%;
+            padding: 2px;
+            margin: 5px 0 20px 0;
+            display: inline-block;
+            border: none;
+            background: #6f766f;
+        }
+
+        .form-control {
+            width: 100% !important;
+            height: 25px;
+            min-width: 180px;
+            background-color: #f2f3f2;
+            border: none;
+            outline: none;
+        }
+
+        hr {
+            border: 1px solid #f1f1f1;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            background-color: #d5ff05;
+            color: black;
+            font-size: 25px;
+            height: 60px;
+            width: 60px;
+            text-align: center;
+            padding: 20px 20px;
+            margin: 1px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            opacity: 10;
+        }
+
+            .btn:hover {
+                opacity: 1;
+            }
+
+        .text-danger {
+            color: #e60000
+        }
+    </style>
+</head>
+
+<body>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h1>Edit product</h1>
+            <p>Fill in this form to update a product.</p>
+
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Category, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Category, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Category, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Manufacturer, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Manufacturer, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Manufacturer, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Supplier, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Supplier, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Supplier, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Price, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Save" class="btn" />
+                </div>
+            </div>
+        </div>
+    }
+</body>
+</html>
+
+<div>
+    @Html.ActionLink("Back to list of products", "Products")
+</div>

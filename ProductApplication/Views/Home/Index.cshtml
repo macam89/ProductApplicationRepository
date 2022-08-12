@@ -1,0 +1,53 @@
+﻿
+<head>
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            border: 1px solid #394639;
+            background-color: #6f766f;
+        }
+
+        li {
+            float: left;
+        }
+
+            li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+                li a:hover:not(.active) {
+                    background-color: #ddd;
+                }
+
+                li a.active {
+                    color: black;
+                    background-color: #d5ff05;
+                }
+    </style>
+</head>
+<body>
+
+    <ul>
+        <li><a class="active" href="@Url.Action("Index","Home")">Home</a></li>
+        <li><a href="@Url.Action("Products","ProductView")">Products</a></li>
+    </ul>
+
+</body>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Product Application</h1>
+
+<br />
+<br />
+@Html.ActionLink("List of products", "Products", "ProductView")
+<br />

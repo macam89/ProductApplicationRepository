@@ -1,0 +1,139 @@
+﻿@model IEnumerable<DomainLayer.Models.Product>
+
+<head>
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            border: 1px solid #394639;
+            background-color: #6f766f;
+        }
+
+        li {
+            float: left;
+        }
+
+            li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+                li a:hover:not(.active) {
+                    background-color: #ddd;
+                }
+
+                li a.active {
+                    color: black;
+                    background-color: #d5ff05;
+                }
+    </style>
+</head>
+<body>
+
+    <ul>
+        <li><a href="@Url.Action("Index","Home")">Home</a></li>
+        <li><a class="active" href="@Url.Action("Products","ProductView")">Products</a></li>
+    </ul>
+
+</body>
+
+@{
+    ViewData["Title"] = "Products";
+}
+
+<h1>List of products</h1>
+
+<p>
+    <a href="@Url.Action("Create","ProductView")">Create New</a>
+</p>
+
+<style>
+    table, th, td {
+        border: 1px solid #394639;
+        border-collapse: collapse;
+    }
+
+    th {
+        padding: 8px;
+        text-align: center;
+    }
+
+    td {
+        padding: 5px;
+        text-align: left;
+    }
+
+    table.products {
+        width: 90%;
+        background-color: #f2f3f2;
+    }
+</style>
+
+<table class="products">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayName("ID")
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Manufacturer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Supplier)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayName("Options")
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Manufacturer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Supplier)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ProductID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ProductID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ProductID })
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

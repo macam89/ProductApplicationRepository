@@ -1,0 +1,47 @@
+[
+  {
+    "ProductID": 1,
+    "Name": "Trik sticks",
+    "Description": "Homemade, fine baked pastry in the form of salty sticks. Perfect for every situation.",
+    "Category": "Snacks",
+    "Manufacturer": "Banini",
+    "Supplier": "Banini Trade doo",
+    "Price": "39,99 RSD"
+  },
+  {
+    "ProductID": 2,
+    "Name": "Trik sticks peanuts",
+    "Description": "Open a snack packet and enjoy the flavour of finest Argentinian peanuts.",
+    "Category": "Snacks",
+    "Manufacturer": "Banini",
+    "Supplier": "Banini Trade doo",
+    "Price": "69,99 RSD"
+  },
+  {
+    "ProductID": 3,
+    "Name": "Bananica",
+    "Description": "It may not be the only one, but it surely is the only real one \u2013 the way you remember it from childhood.",
+    "Category": "Confectionery",
+    "Manufacturer": "Soko Stark",
+    "Supplier": "Atlantic Grupa",
+    "Price": "19,99 RSD"
+  },
+  {
+    "ProductID": 4,
+    "Name": "Plazma",
+    "Description": "The love for this biscuit is passed on over generations, and all of this is because of its unique taste.",
+    "Category": "Biscuits",
+    "Manufacturer": "Bambi",
+    "Supplier": "Koncern Bambi ad",
+    "Price": "119,99 RSD"
+  },
+  {
+    "ProductID": 5,
+    "Name": "Chipsy Classic",
+    "Description": "Made from carefully selected potatoes, it meets the highest quality standards.",
+    "Category": "Snacks",
+    "Manufacturer": "Marbo",
+    "Supplier": "Marbo Product",
+    "Price": "139,99 RSD"
+  }
+]

@@ -1,0 +1,11 @@
+Api/bin/
+Api/obj/
+DataAccessLayer/bin/
+DataAccessLayer/obj/
+DomainLayer/bin/
+DomainLayer/obj/
+ProductApplication/bin/
+ProductApplication/obj/
+ServiceLayer/bin/
+ServiceLayer/obj/
+ProductApplication/.vs/
